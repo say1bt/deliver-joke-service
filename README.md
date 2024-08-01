@@ -1,73 +1,98 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Deliver Service
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+The Deliver Service is a microservice built with NestJS, designed to handle the delivery of jokes within the Jokes Service architecture. It provides functionality for retrieving random jokes and submitting them through the API. This service integrates with other microservices for a seamless joke management experience and is containerized using Docker and deployed to Amazon EC2 instances.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Features
 
-## Description
+- **Fetch Random Joke**: Retrieve a random joke from the backend.
+- **Submit Joke**: Allow users to submit new jokes.
+- **Integration**: Interacts with other microservices for joke management.
+- **API Documentation**: Swagger is integrated for API documentation.
+- **Dockerized**: The service is containerized using Docker.
+- **Deployment**: Deployed to Amazon EC2 instances for scalability and reliability.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Table of Contents
+
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [API Endpoints](#api-endpoints)
+4. [Docker](#docker)
+5. [Deployment](#deployment)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Acknowledgments](#acknowledgments)
 
 ## Installation
 
+To get started with the Deliver Service, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/say1bt/deliver-service.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd deliver-service
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+To start the Deliver Service locally, run:
 ```bash
-$ npm install
+npm run start
 ```
 
-## Running the app
+The service will be available at `http://localhost:3000`.
 
-```bash
-# development
-$ npm run start
+## API Endpoints
 
-# watch mode
-$ npm run start:dev
+### Joke Management
 
-# production mode
-$ npm run start:prod
-```
+- `GET /jokes/random`: Retrieve a random joke.
+- `POST /jokes`: Submit a new joke.
 
-## Test
+## Docker
 
-```bash
-# unit tests
-$ npm run test
+The service is containerized using Docker. To build and run the Docker container, follow these steps:
 
-# e2e tests
-$ npm run test:e2e
+1. Build the Docker image:
+   ```bash
+   docker build -t deliver-service .
+   ```
 
-# test coverage
-$ npm run test:cov
-```
+2. Run the Docker container:
+   ```bash
+   docker run -p 3000:3000 deliver-service
+   ```
 
-## Support
+## Deployment
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+The Deliver Service is deployed to Amazon EC2 instances for scalability and reliability. The deployment process includes:
 
-## Stay in touch
+1. Pushing the Docker image to Amazon ECR (Elastic Container Registry).
+2. Creating and configuring an EC2 instance.
+3. Pulling and running the Docker image on the EC2 instance.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Contributing
+
+We welcome contributions to improve the Deliver Service. Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to adjust this README file according to your specific project needs.
