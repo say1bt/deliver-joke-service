@@ -79,6 +79,13 @@ The Deliver Service is deployed to Amazon EC2 instances for scalability and reli
 2. Creating and configuring an EC2 instance.
 3. Pulling and running the Docker image on the EC2 instance.
 
+ 
+ ## Database
+
+- The MySQL database for the Deliver Jokes service is hosted in Azure SQL Server.
+
+
+
 ## Contributing
 
 We welcome contributions to improve the Deliver Service. Please follow these steps:
